@@ -1,13 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic Events
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Events</h2>
+  <h2>Ionic Events</h2>
+  <!-- <ion-item>
+      <ion-label>Reserved Seating Only?</ion-label>
+      <ion-checkbox color="blue" checked="true"></ion-checkbox>
+    </ion-item> -->
   <ion-list>
       <ion-item *ngFor="let event of eventList.events">
           <ion-card style="white-space: normal;">
@@ -16,11 +20,13 @@
                 <ion-card-title>
                   {{ event.name }}
                   <h3><b>Location: </b>{{event.venue.name}}</h3>
-                  <ion-icon *ngIf="event.venue.use_reserved_seating" name="ios-contacts-outline"></ion-icon>                  </ion-card-title>
-                 <div innerHTML="{{ event.films[0].description }}"></div> 
+                  <ion-icon *ngIf="event.venue.use_reserved_seating" name="ios-contacts-outline"></ion-icon>   
+                </ion-card-title>
+                 Genre: {{event.films[0].tags[0].name}}
+                  <div innerHTML="{{ event.films[0].description }}"></div> <Br>
+                    <a href="{{event.films[0].trailer_url}}">Watch Trailer</a>
               </ion-card-content>
             </ion-card>
-      {{  event.name }}
       </ion-item>
   </ion-list>
   </ion-content>
