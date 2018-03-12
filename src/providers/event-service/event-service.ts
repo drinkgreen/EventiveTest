@@ -31,7 +31,7 @@ export class EventServiceProvider {
       this.http.get(this.getApiUrl)
       .map(res => res.json())
       .subscribe(data => {
-        this.data = data;
+        this.data = data;//JSON.parse(data);
         resolve(this.data);
       });
     });

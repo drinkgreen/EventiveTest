@@ -16,6 +16,7 @@ export class HomePage {
 
   getPosts() {
     this.eventService.getPosts().then(data => {
+      console.log(data);
       this.eventList = data;
     })
   }

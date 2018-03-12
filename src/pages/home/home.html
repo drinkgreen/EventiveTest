@@ -10,6 +10,16 @@
   <h2>Events</h2>
   <ion-list>
       <ion-item *ngFor="let event of eventList.events">
+          <ion-card style="white-space: normal;">
+              <img src="{{ event.films[0].poster_image }}" style="float: left; margin: 4px 10px 0px 0px; border: 1px solid #000000; width: 150px; height: 200px"/>
+              <ion-card-content>
+                <ion-card-title>
+                  {{ event.name }}
+                  <h3><b>Location: </b>{{event.venue.name}}</h3>
+                  <ion-icon *ngIf="event.venue.use_reserved_seating" name="ios-contacts-outline"></ion-icon>                  </ion-card-title>
+                 <div innerHTML="{{ event.films[0].description }}"></div> 
+              </ion-card-content>
+            </ion-card>
       {{  event.name }}
       </ion-item>
   </ion-list>
